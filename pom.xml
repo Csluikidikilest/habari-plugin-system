@@ -5,8 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.qazima.habari</groupId>
-    <artifactId>plugin-system</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>habari-plugin-system</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <name>Habari Plugin system</name>
+    <url>http://www.qazima.org/</url>
 
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
