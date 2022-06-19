@@ -38,7 +38,7 @@ class NodeExtensionTest {
     }
 
     @Test
-    @DisplayName("Get elements of a JsonNODE from a field name")
+    @DisplayName("Get value of a JsonNODE from a field name")
     void get() {
         String json = "{\"boolean\": true, \"int\": 0, \"string\": \"string\"}";
         ObjectMapper mapper = new ObjectMapper();
