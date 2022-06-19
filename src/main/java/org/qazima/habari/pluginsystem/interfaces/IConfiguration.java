@@ -1,7 +1,7 @@
 package org.qazima.habari.pluginsystem.interfaces;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.JsonNode;
 
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public interface IConfiguration extends IReadOnlyConfiguration {
@@ -9,5 +9,5 @@ public interface IConfiguration extends IReadOnlyConfiguration {
     boolean isPostAllowed();
     boolean isPutAllowed();
 
-    void LoadFromJsonParser(JsonParser parser, int defaultPageSize, boolean isGetAllowed, boolean isDeleteAllowed, boolean isPostAllowed, boolean isPutAllowed);
+    void LoadFromJson(JsonNode node, int defaultPageSize, boolean isGetAllowed, boolean isDeleteAllowed, boolean isPostAllowed, boolean isPutAllowed);
 }

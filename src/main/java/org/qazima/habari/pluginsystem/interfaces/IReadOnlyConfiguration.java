@@ -1,13 +1,13 @@
 package org.qazima.habari.pluginsystem.interfaces;
 
-import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.JsonNode;
 
 public interface IReadOnlyConfiguration {
-    int defaultPageSize();
+    int getDefaultPageSize();
     boolean isGetAllowed();
-    String metadataUri();
-    String type();
-    String restUri();
+    String getMetadataUri();
+    String getType();
+    String getRestUri();
 
-    void LoadFromJsonParser(JsonParser parser, int defaultPageSize, boolean isGetAllowed);
+    void LoadFromJson(JsonNode node, int defaultPageSize, boolean isGetAllowed);
 }

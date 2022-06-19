@@ -1,13 +1,14 @@
 package org.qazima.habari.pluginsystem.interfaces;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.sun.net.httpserver.HttpContext;
+import org.qazima.habari.pluginsystem.library.ContentManager;
 
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public interface IPlugin {
-    IConfiguration configuration();
-    boolean Configure(JsonParser parser, int defaultPageSize, boolean isGetAllowed, boolean isDeleteAllowed, boolean isPostAllowed, boolean isPutAllowed);
-    int Process(HttpContext httpContext, StringBuilder contentType, StringBuilder content);
-    int ProcessMetadata(HttpContext httpContext, StringBuilder contentType, StringBuilder content);
+    IConfiguration getConfiguration();
+    boolean Configure(JsonNode node, int defaultPageSize, boolean isGetAllowed, boolean isDeleteAllowed, boolean isPostAllowed, boolean isPutAllowed);
+    int Process(HttpContext httpContext, ContentManager contentManager);
+    int ProcessMetadata(HttpContext httpContext, ContentManager contentManager);
 }
