@@ -38,16 +38,53 @@ class NodeExtensionTest {
     }
 
     @Test
-    @DisplayName("Get value of a JsonNODE from a field name")
-    void get() {
+    @DisplayName("Get boolean value of a JsonNODE from a field name")
+    void getBoolean() {
         String json = "{\"boolean\": true, \"int\": 0, \"string\": \"string\"}";
         ObjectMapper mapper = new ObjectMapper();
         try {
             JsonNode node = mapper.readTree(json);
             assertAll(
-                    () -> assertEquals(true, NodeExtension.get(node, "boolean", false)),
+                    () -> assertTrue(NodeExtension.get(node, "boolean", false)),
+                    () -> assertFalse(NodeExtension.get(node, "dummy", false)),
+                    () -> assertFalse(NodeExtension.get(node, "int", false)),
+                    () -> assertFalse(NodeExtension.get(node, "string", false))
+            );
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    @DisplayName("Get int value of a JsonNODE from a field name")
+    void getInt() {
+        String json = "{\"boolean\": true, \"int\": 0, \"string\": \"string\"}";
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            JsonNode node = mapper.readTree(json);
+            assertAll(
+                    () -> assertEquals(1, NodeExtension.get(node, "boolean", -1)),
+                    () -> assertEquals(-1, NodeExtension.get(node, "dummy", -1)),
                     () -> assertEquals(0, NodeExtension.get(node, "int", -1)),
-                    () -> assertEquals("string", NodeExtension.get(node, "string", ""))
+                    () -> assertEquals(-1, NodeExtension.get(node, "string", -1))
+            );
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    @DisplayName("Get string value of a JsonNODE from a field name")
+    void getString() {
+        String json = "{\"boolean\": true, \"int\": 0, \"string\": \"string\"}";
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            JsonNode node = mapper.readTree(json);
+            assertAll(
+                    () -> assertEquals("true", NodeExtension.get(node, "boolean", "")),
+                    () -> assertEquals("", NodeExtension.get(node, "dummy", "")),
+                    () -> assertEquals("0", NodeExtension.get(node, "int", "")),
+                    () -> assertEquals("string", NodeExtension.get(node, "string", "string"))
             );
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
