@@ -10,5 +10,6 @@ public interface IPlugin {
     IConfiguration getConfiguration();
     boolean Configure(JsonNode node, int defaultPageSize, boolean isGetAllowed, boolean isDeleteAllowed, boolean isPostAllowed, boolean isPutAllowed);
     int Process(HttpContext httpContext, ContentManager contentManager);
+    int ProcessConfigure(HttpContext httpContext, ContentManager contentManager);
     int ProcessMetadata(HttpContext httpContext, ContentManager contentManager);
 }
