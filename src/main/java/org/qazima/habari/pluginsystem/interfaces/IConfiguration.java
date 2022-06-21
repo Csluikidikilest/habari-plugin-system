@@ -3,7 +3,6 @@ package org.qazima.habari.pluginsystem.interfaces;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.databind.JsonNode;
 
-@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public interface IConfiguration extends IReadOnlyConfiguration {
     boolean isDeleteAllowed();
 

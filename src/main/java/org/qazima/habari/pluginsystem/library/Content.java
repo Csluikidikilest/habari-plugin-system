@@ -1,15 +1,15 @@
 package org.qazima.habari.pluginsystem.library;
 
-public class ContentManager {
+public class Content {
     private String type = "text/plain";
-    private byte[] content;
+    private byte[] body;
 
-    public byte[] getContent() {
-        return content;
+    public byte[] getBody() {
+        return body;
     }
 
-    public void setContent(byte[] content) {
-        this.content = content;
+    public void setBody(byte[] body) {
+        this.body = body;
     }
 
     public String getType() {
