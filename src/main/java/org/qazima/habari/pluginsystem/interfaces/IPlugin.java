@@ -6,9 +6,9 @@ import com.sun.net.httpserver.HttpContext;
 import org.qazima.habari.pluginsystem.library.Content;
 
 public interface IPlugin {
-    IConfiguration getConfiguration();
-    boolean Configure(JsonNode node, int defaultPageSize, boolean isGetAllowed, boolean isDeleteAllowed, boolean isPostAllowed, boolean isPutAllowed);
-    int Process(HttpContext httpContext, Content content);
-    int ProcessConfigure(HttpContext httpContext, Content content);
-    int ProcessMetadata(HttpContext httpContext, Content content);
+    IReadOnlyConfiguration getConfiguration();
+    boolean configure(JsonNode node, int defaultPageSize, boolean isGetAllowed, boolean isDeleteAllowed, boolean isPostAllowed, boolean isPutAllowed);
+    int process(HttpContext httpContext, Content content);
+    int processConfigure(HttpContext httpContext, Content content);
+    int processMetadata(HttpContext httpContext, Content content);
 }

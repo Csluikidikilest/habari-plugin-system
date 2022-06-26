@@ -7,7 +7,7 @@ public interface IReadOnlyConfiguration {
     boolean isGetAllowed();
     String getMetadataUri();
     String getType();
-    String getRestUri();
+    String getUri();
 
-    void LoadFromJson(JsonNode node, int defaultPageSize, boolean isGetAllowed);
+    void loadFromJson(JsonNode node, int defaultPageSize, boolean isGetAllowed);
 }
