@@ -1,8 +1,19 @@
 package org.qazima.habari.pluginsystem.library;
 
+import org.apache.http.HttpStatus;
+
 public class Content {
+    private int statusCode = HttpStatus.SC_OK;
     private String type = "text/plain";
     private byte[] body;
+
+    public int getStatusCode() {
+        return statusCode;
+    }
+
+    public void setStatusCode(int statusCode) {
+        this.statusCode = statusCode;
+    }
 
     public byte[] getBody() {
         return body;
