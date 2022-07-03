@@ -7,6 +7,7 @@
     <groupId>org.qazima.habari</groupId>
     <artifactId>habari-plugin-system</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <name>Habari Plugin system</name>
     <url>http://www.qazima.org/</url>
@@ -34,6 +35,11 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.2</version>
         </dependency>
     </dependencies>
 </project>
